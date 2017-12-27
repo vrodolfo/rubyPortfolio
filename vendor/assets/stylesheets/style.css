@@ -1,0 +1,449 @@
+/*=====================================*/
+/*===============GLOBALS===============*/
+/*=====================================*/
+section{
+	padding:0;
+}
+
+.link{
+	color: whitesmoke;
+	text-decoration-line: underline;
+	font-size: 18px;
+}
+
+.paging{
+	display: inline-block;
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	width: 100%;
+}
+.btn-custom{
+	padding-top: 0px;
+	border-radius: 0;
+	background-color: transparent;
+	padding: 15px 40px;
+	transition: all 400ms ease;
+	border-width: 4px;
+	text-transform: uppercase;
+}
+
+.slogan{
+	font-size: 25px;
+	color: #636363;
+}
+
+h1{
+	color: white;
+}
+
+/*PARA ELIMINAR EL SCROLLBAR QUE APARECE CON EL CONTAINER FLUID*/
+.row2{
+	margin-left: 0;
+  	margin-right: 0;
+}
+
+/*=====================================*/
+/*===============NAVBAR===============*/
+/*=====================================*/
+/* .navbar-default.nav-top ul {
+  display: inline-block;
+  float: right;
+  background-color: black;
+  z-index: +99;
+}
+.navbar-default ul.navbar-top li {
+  float: left;
+  font-size: 11px;
+  background-color: black;
+  z-index: +99;
+}
+.navbar-brand {
+  margin: -40px;
+}*/
+
+.custom-header-top{
+	
+	width: 100%;
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+
+}
+.phone{
+	width: 20px;
+	height: 20px;
+}
+
+.logoHeader{
+	color: #37e224;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: arial;
+}
+.logoinner{
+	font-size: 20px;
+	color: white;
+	color:whitesmoke;
+}
+
+
+
+.navbar-custom{
+	background-color: rgba(130, 127, 127, 0.9);
+	border:none;
+	background-image:none;
+}
+
+.navbar-custom .navbar-nav>li>a{
+	color:whitesmoke;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	transition: all 400ms ease;
+}
+
+.navbar-custom .navbar-nav > li > a:hover{
+	color: #4f4d4d;
+	background-color: #37e224;
+	}
+
+.navbar-brand{
+	padding-top: 0px;
+}
+
+/*=====================================*/
+/*===============HEADER===============*/
+/*====================================*/
+.header-image{
+	position: relative;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url(foto.jpg);
+	 
+}
+
+.header-inner{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;	
+	color: #fff;
+	z-index: 2;
+}
+
+.header-inner h1{
+	font-size: 60px;
+	margin: 25px 0;
+
+}
+
+.header-overlay{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.no-padding > [class*=col-]{
+
+	padding:0;
+}
+
+
+
+.custom-slide{
+	height: 100vh;
+}
+
+.imagen{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
+
+}
+#logoRV{
+	background-image: url("logoRV.jpg");
+	background-color: black;
+	/*background-size: cover;*/
+	background-size: 1000px 600px;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
+}
+#slider1{
+
+	background-image: url("slider1.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
+}
+#slider2{
+	background-image: url("slider2.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
+}
+#slider3{
+	background-image: url("backgground.jpg");
+	/*background-size: 400px 400px;*/
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;
+}
+
+.logo2{
+
+	width: 205px;
+	height: 100px;
+}
+
+.logo3{
+	background-image: url("logoRV.jpg");
+	background-size: cover;
+	background-position: center;
+	width: 400px;
+	height: 300px;
+}
+.foot{
+	padding-top: 30px;
+	padding-bottom: 0;
+	color: whitesmoke;
+	font-size: 25px;
+	text-align: center;
+	width: 100%;
+}
+
+
+.parallax{
+	/*background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100%;*/
+}
+
+.about{
+	padding: 50px 0;
+	background-color: black;
+	color: white;
+}
+
+
+.projects{
+	padding: 50px 0;
+	background-color: #2B2B2B;
+}
+
+.pythonProjects{
+	position: relative;
+  z-index: 1;
+	/*opacity: .4;
+	background-size: 200px 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+*/
+}
+
+.imgProjects{
+	width: 80px;
+	height: 80px;
+}
+
+.title{
+	color: whitesmoke;
+}
+.subtitle{
+	font-size: 25px;
+	color: #37e224;
+	font-weight: bold;
+}
+.skill{
+	font-size: 18px;
+	color: white;
+}
+
+.skills{
+	background-color: #444444;
+}
+
+.education{
+	background-color: #555555;
+}
+.links{
+	background-color: #666666;
+}
+.contact{
+	background-color: #777777;
+}
+
+
+.logoContact{
+
+	width: 60px;
+	height: 60px;
+	
+}
+
+.copy{
+	width: 20px;
+	height: 20px;
+}
+
+.telefono2{
+	color: whitesmoke;
+}
+
+#map{
+	width:1024px;
+	height:400px;
+	background:white;
+}
+.contacto{
+	padding: 50px 0;
+	background-color: #8C8C8C;
+	color: whitesmoke;
+}
+
+.parrafo{
+	font-size: 20px;
+
+}
+.circle {
+	top:25px;
+	position: absolute;
+	left: 50%;
+	padding-top: 10px;
+	transform: translateX(-50%);
+	padding-top: 20px;
+	/*background-color: rgba(130, 127, 127, 1) ;*/
+	background-color: #004CFF;
+  	width: 150px;
+  	height: 150px;
+  	border-radius: 50%;
+	border-color: red;
+  	font-size: 15px;
+  	color: whitesmoke;
+  	line-height: 100px;
+  	text-align: center;
+  	text-transform: uppercase;
+  	font-weight: bold;
+
+}
+.circle2{
+	left:50%;
+	transform: translateX(-50%);
+	position: absolute;
+	background-color: #37e224 ;
+  	width: 160px;
+  	height:160px;
+  	border-radius: 50%;
+
+}
+
+.contenedor{
+	width: 100%;
+	height: 100%;
+	padding-left: 50px;
+	padding-top: 20px;
+	padding-bottom: 130px;
+	position: relative;
+
+}
+
+
+.beforeSent{
+	background-image: url("emailBeforeSend.png");
+	background-size: 90px 55px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: #004CFF;
+}
+
+.afterSent{
+	background-image: url("emailAfterSent.png");
+	background-size: 90px 55px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: rgba(130, 127, 127, 0.9);
+}
+
+.contactFloat{
+
+	position: fixed;
+	font-size: 25px;
+	top:50%;
+	left: 97%;
+	text-align: center;
+	height: 60px;
+	width: 150px;
+	z-index: +10;
+	transform: translate(-43%, -30%) rotate(270deg);
+	padding-top: 5px;
+	transition: all 400ms ease;
+	border: 5px solid #37e224;
+	color: white !important;
+	text-decoration: none !important;
+	border-radius: 2px;
+	letter-spacing: 1.6px;
+	cursor: pointer;
+}
+
+.contactFloat:hover{
+	color: #37e224;
+	text-decoration: none !important;
+	background-color: rgba(13,255,0, 1);
+	border-width: 5px;
+	border-color: #004CFF;
+}
+
+.contactFloat:active{
+	text-decoration: none !important;
+	height: 50px;
+	width: 150px;
+	color: red;
+}
+
+.contactFloat:visited{text-decoration: none !important;}
+
+
+.enviar{
+	color: whitesmoke;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+	border-radius: 0;
+	border-color: black;
+	background-color: rgba(130, 127, 127, 1);
+
+}
+
+.enviar:hover{
+	background-color: #37e224;
+
+}
+
+#foto1{
+	height: 100px;
+	width: 100px;
+}
+
+.educationLogo{
+	width: 80px;
+	height: 50px;
+}

@@ -1,0 +1,105 @@
+
+
+<section class="parallax skills" id="skills">
+		<br><br><br>
+		<div class="row row2">
+			<div class="col-md-offset-1 col-md-11">
+				<h1 class="title">Skills</h1>
+			</div>
+			<br>
+		</div>
+		
+		<div class="row row2">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<section class="parallax owl-carousel owl-theme" id="inicio">
+
+					 <div class="item" id="foto1"><img src="<%= image_url('HTML.png') %>" alt=""></div>
+					 <div class="item" id="foto1"><img src="<%= image_url('CSS.png') %>" alt=""></div>
+					 <div class="item" id="foto1"><img src="<%= image_url('JavaScript.png') %>" alt=""></div>
+					 <div class="item" id="foto1"><img src="<%= image_url('jQuery.png') %>" alt=""></div>
+					 <div class="item" id="foto1"><img src="<%= image_url('bootstrap.png') %>" alt=""></div>
+				    
+				    <div class="item" id="foto1"><img src="<%= image_url('python.png') %>" alt=""></div>
+				    <div class="item" id="foto1"><img src="<%= image_url('django.png') %>" alt=""></div>
+					<div class="item" id="foto1"><img src="<%= image_url('ajax.png') %>" alt=""></div>
+
+					<div class="item" id="foto1"><img src="<%= image_url('MEAN.png') %>" alt=""></div>
+					<div class="item" id="foto1"><img src="<%= image_url('RUBY.png') %>" alt=""></div>
+
+				    <div class="item" id="foto1"><img src="<%= image_url('angular.png') %>" alt=""></div>
+				    
+				    <div class="item" id="foto1"><img src="<%= image_url('github.png') %>" alt=""></div>
+				   
+				    <div class="item" id="foto1"><img src="<%= image_url('mongodb.png') %>" alt=""></div>
+				    <div class="item" id="foto1"><img src="<%= image_url('mysql.png') %>" alt=""></div>
+				    <div class="item" id="foto1"><img src="<%= image_url('nodejs.png') %>" alt=""></div>
+				    <div class="item" id="foto1"><img src="<%= image_url('sqlite.png') %>" alt=""></div>
+				</section>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+		<br>
+		<div class="row row2">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+
+				<table class="table table-condensed">
+					<tr class="subtitle">
+						<th>Category</th>
+						<th>Name</th>
+						<th>Years</th>
+					</tr>
+
+					<% @skills.each do |skill| %>
+						<tr class="skill">	
+							<td><%= skill.category %></td>
+							<td><%= skill.name %></td>
+							<td><%= skill.years %></td>
+						</tr>
+					<% end %>
+					<tr><td colspan="4">
+							<input type="hidden" name="" id="">
+							<% if @skillsPages > 0 %>
+								<p class="paging">Page:
+								<% @skillsPages.times do |i| %>
+									<% if (i+1).to_i==@pageSkills.to_i %>
+										<%= i+1 %>
+									<% else %>
+										<a href="<%= root_path(@pageProjects,i+1,@pageEdu) %>"><%= i+1 %></a>
+									<% end %>  
+								<% end %>
+								</p>
+							<% end %>
+						</td></tr>
+				</table>	
+				<!-- 
+				<p class="skill">
+					<span class="subtitle">Databases:</span> Postgres, SQLlite, SQL Server, MySQL, DB2, Access.
+				</p>
+
+				
+				<p class="skill">
+					<span class="subtitle">Frameworks:</span> Rails (Activerecord), Django, Bootstrap, JQuery. 
+				</p>
+				<p class="skill">
+					<span class="subtitle">Developer tools:</span> Dreamweaver, VS .NET, Microfocus, TSO, Sublime, Notepad++, Editplus. 
+				</p>
+				<p class="skill">
+					<span class="subtitle">Operating Systems:</span> Windows, Mainframe. 
+				</p>
+				<p class="skill">
+					<span class="subtitle">Programming Languages:</span>   Ruby, Python, Java(J2EE), VB, VBScript, Classic ASP, HTML5, CSS3, JavaScript, SQL, COBOL, JCL, VSAM, CICS. 
+				</p>
+				<p class="skill">
+					<span class="subtitle">Others:</span> Git, RESTful, APIS, Ajax, Json. 
+				</p>
+				<p class="skill">
+					<span class="subtitle">Sales:</span> Conferences from 1 to 300 people, cross-selling, up-selling, customer follow up, sales CRM tools, telemarketing, face to face, advising, negotiation
+				</p> -->
+			</div>
+				
+			<div class="col-md-2"></div>
+		</div>
+		
+	</section>

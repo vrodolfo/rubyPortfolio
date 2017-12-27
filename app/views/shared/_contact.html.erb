@@ -1,0 +1,89 @@
+<section class="parallax contacto" id="contact">
+		<br>
+		<div class="row row2">
+			<div class="col-md-1"></div>
+
+			<div class="col-md-11">
+				<h1 class="">Contact</h1>
+			</div>
+
+			<div class="col-md-1"></div>
+		</div>
+		
+		<div class="row row2">
+			<div class="col-md-1"></div>
+
+			<div class="col-md-4">
+				<div class="logo3">
+					
+				</div>
+			</div>
+
+			<div class="col-md-4">
+
+				<div class="telefono2">
+					<a href="https://www.linkedin.com/in/rodolfovaldivieso/?locale=en_US" target="_blank"> <img class="logoContact" src="<%= image_url('linkedin2.png') %>" alt=""></a>
+					&nbsp; Linkedin  
+				</div>
+				<br>
+				<div class="telefono2">
+					<a href="https://github.com/vrodolfo" target="_blank"><img class="logoContact" src="<%= image_url('github2.png') %>" alt=""></a>
+					&nbsp;Github 
+				</div>
+				<br>
+				<div class="telefono2">
+					<a href="#myModal"  data-toggle="modal" data-target="#myModal"><img class="logoContact" src="<%= image_url('email.png') %>" alt=""></a>
+					&nbsp;rodolfo.valdivieso.developer@gmail.com
+				</div>
+				<br>
+				<div class="telefono2">
+					<a href="#" target="_blank"><img class="logoContact" src="<%= image_url('site.png') %>" alt=""></a>
+					&nbsp; www.rodolfovaldivieso.com
+				</div>
+				<br>
+			</div>
+			
+			<div class="col-md-3"></div>
+			
+		</div>
+
+		<div class="row row2">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<div id="map"></div>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+
+		<div class="row row2">
+			<div class="col-md-12">
+				<div class="foot">
+					<img class="copy" src="<%= image_url('copy.png') %>" alt="">
+				&nbsp;Designed and Developed by Rodolfo Valdivieso
+
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		
+	</section>
+
+	
+	<script type="text/javascript">
+		function myMap() {
+		    var mapOptions = {
+		        center: new google.maps.LatLng(33.036612, -96.704803),
+		        zoom: 9,
+		        mapTypeId: google.maps.MapTypeId.HYBRID
+		    }
+		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		}
+	</script>
+
+	<script  async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['maps_apikey'] %>&callback=myMap"></script>

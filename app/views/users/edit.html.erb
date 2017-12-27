@@ -1,0 +1,29 @@
+<div class="container">
+	<a href="<%= usersShow_path @current_user.id %>">Show User</a>
+
+	<h1>Edit User <%= @current_user.first_name %></h1>
+
+	<form action="<%= usersUpdate_path @current_user.id %>" method="post">
+			<input type="hidden" name="_method" value="patch">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<table>
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" name="first_name" value="<%= @current_user.first_name %>"></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" name="last_name" value="<%= @current_user.last_name %>"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" name="email" value="<%= @current_user.email %>"></td>
+				</tr>
+				<tr><td colspan="2" align="center">
+					<input class="button" type="submit" value="Update">
+				</td></tr>
+			</table>
+			
+	</form>
+
+</div>

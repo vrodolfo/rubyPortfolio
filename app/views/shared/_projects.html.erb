@@ -1,0 +1,128 @@
+<section class="parallax projects" id="projects">
+		<br>
+		<div class="row row2">
+			<div class="col-md-offset-1 col-md-11">
+				<h1 class="title">Projects</h1>
+			</div>
+			<br>
+		</div>
+
+		<br>
+		<div class="row row2">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+
+				<table class="table ">
+					<tr class="subtitle">
+						<th>Logo</th>
+						<th>Name</th>
+						<th>Tecnology</th>
+						<th>Link</th>
+						
+					</tr>
+
+						<% @projects.each do |project| %>
+							<tr class="skill">	
+								<td><% if project.logo %>
+									<img class="educationLogo" src="<%= image_url(project.logo.to_s) %>" alt="">
+									<%end%></td>
+								<td><a href="#" class="link"  data-toggle="modal" data-target="#projectModal<%= project.id %>" ><%= project.name %></a></td>
+								<td><%= project.technology %></td>
+								
+								<td> <a href="<%= project.link %>" class="link"  target="_blank"> Go </a></td>
+								
+							</tr>
+						<% end %>
+						<tr><td colspan="4">
+							<input type="hidden" name="" id="">
+							<% if @projectsPages > 0 %>
+								<p class="paging">Page:
+								<% @projectsPages.times do |i| %>
+									<% if (i+1).to_i==@pageProjects.to_i %>
+										<%= i+1 %>
+									<% else %>
+										<a href="<%= root_path(i+1,@pageSkills,@pageEdu) %>"><%= i+1 %></a>
+									<% end %>  
+								<% end %>
+								</p>
+							<% end %>
+						</td></tr>
+				</table>	
+			</div>
+				
+			<div class="col-md-2"></div>
+		</div>
+
+		<!-- <div class="row row2">
+			<div class="col-md-offset-1 col-md-11">
+				<h2 class="title"><img class="imgProjects" src="<%= image_url('python.png') %>" alt="">Python/Django:</h2>
+			</div>
+			<br>
+		</div>
+		<div class="row row2">
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+			</div>
+				
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+		
+
+
+
+		<div class="row row2">
+			<div class="col-md-offset-1 col-md-11">
+				<h2 class="title"><img class="imgProjects" src="<%= image_url('RUBY.png') %>" alt="">Ruby on Rails:</h2>
+			</div>
+			<br>
+		</div>
+		<div class="row row2">
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+			</div>
+				
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-2">
+				
+					<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, suscipit rerum similique consequuntur et a in explicabo reiciendis illum amet ipsum! Aspernatur laboriosam dolor, aliquam eveniet illum vitae dolores numquam magni, molestias, accusamus tenetur expedita placeat eius ex sequi fugiat delectus iusto, hic sapiente. Nostrum fugiat recusandae, nihil totam hic.</p>
+				
+			</div>
+			<div class="col-md-1"></div> -->
+		</div>
+	</section>

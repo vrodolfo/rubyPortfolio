@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rodolfo Valdivieso</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'style' %>
+  
+  <%= csrf_meta_tags %>
+  
+  <link rel="icon" href="<%= image_url('minilogo.png') %>" />
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+	  <div class="container">
+	   <!-- <div class="row row2">
+	  		<div class="col-md-12">
+	  			<div class="navbar-header custom-header-top">	
+					<img class="phone" src="img/phone.png" alt="">
+	  				Phone Number: +1
+	  			</div>
+	  		</div>
+	  	</div>  -->
+	  	<br>
+	  	<div class="row row2">
+	  		<div class="col-md-12">
+	  			<div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">
+	      	<div class="logoHeader">	
+	      		Rodolfo Valdivieso <br>
+	      		<p class="logoinner">Web Developer</p>
+	      	</div>
+	      </a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right custom-header">
+	        <li><a href="#about"     class="page-scroll">About</a></li>
+	        <li><a href="#projects"  class="page-scroll">Projects</a></li>
+	        <li><a href="#skills"    class="page-scroll">Skills</a></li>
+	        <li><a href="#education" class="page-scroll">Education</a></li>
+	        <!-- <li><a href="#resume" class="page-scroll">Resume</a></li> -->
+	        <!-- <li><a href="#links"     class="page-scroll">Links</a></li> -->
+	        <li><a href="#contact"   class="page-scroll">Contact</a></li>
+	        <li><a href="<%= sessionsNew_path %>"     class="page-scroll">Login</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  		</div>
+	  	</div>
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+	<!-------------------------------->
+	<!-----------CONTACT------------->
+	<!-------------------------------->
+
+	<div class="">
+		<% if session[:email] %>
+			<buton type="button" class="contactFloat afterSent" data-toggle="modal" data-target="#myModal">
+			</buton>
+		<%else%>
+			<buton type="button" class="contactFloat beforeSent" data-toggle="modal" data-target="#myModal">
+			</buton>
+		<%end%>
+	</div>
+
+
+<%= yield %>
+
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+</body>
+</html>

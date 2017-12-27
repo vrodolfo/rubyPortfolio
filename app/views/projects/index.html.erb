@@ -1,0 +1,165 @@
+
+
+<% if @update == 0 %>
+	
+<div class="container">
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div  class="col-md-10">
+			<h2>Add a Project</h2>
+		</div>
+	</div>
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div class="col-md-8">
+		<form action="<%= projectsCreate_path %>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<table class="table table-bordered">
+				<tr>
+					<th>Name:</th>
+					<td><input class="input" type="text" maxlength="100" name="project[name]" value="<%= session[:name] %>"></td>
+				</tr>
+				<tr>
+					<th>Technology:</th>
+					<td><input class="input" type="text" maxlength="100" name="project[technology]"  value="<%= session[:technology] %>"></td>
+				</tr>
+				<tr>
+					<th>Description:</th>
+					<td>
+						<textarea class="input" name="project[description]" id="" cols="30" rows="5"><%= session[:description] %></textarea>
+						</td>
+				</tr>
+				<tr>
+					<th>Link:</th>
+					<td>
+						<input class="input" type="text" maxlength="100" name="project[link]"  value="<%= session[:link] %>">
+					</td>
+				</tr>
+				<tr>
+					<th>Logo:</th>
+					<td>
+						<input class="input" type="text" maxlength="200" name="project[logo]"  value="<%= session[:logo] %>">
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<button type="submit" class="button">Add Project</button>
+						<a href="<%= projectsCancel_path %>" ><button class="button" >Cancel</button></a>
+					</td>
+				</tr>
+
+			</table>
+		</form>
+	</div>
+	<div  class="col-md-2"></div>
+	</div>
+<% else %>
+
+	
+<div class="container">
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div  class="col-md-10">
+			<h2>Edit a Project</h2>
+		</div>
+	</div>
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div class="col-md-8">
+		<form action="<%= projectsUpdate_path session[:project_id] %>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="_method" value="patch">
+			
+			<table class="table table-bordered">
+				<tr>
+					<td>Name:</td>
+					<td><input class="input" type="text" maxlength="250" name="project[name]" value="<%= session[:name] %>"></td>
+				</tr>
+				<tr>
+					<td>Technology:</td>
+					<td><input class="input" type="text" maxlength="250" name="project[technology]"  value="<%= session[:technology] %>"></td>
+				</tr>
+				<tr>
+					<th>Description:</th>
+					<td>
+						<textarea class="input" name="project[description]" id="" cols="30" rows="5" maxlength="500"><%= session[:description] %></textarea>
+						</td>
+				</tr>
+				<tr>
+					<th>Link:</th>
+					<td>
+						<input class="input" type="text" maxlength="250" name="project[link]"  value="<%= session[:link] %>">
+					</td>
+				</tr>
+				<tr>
+					<th>Logo:</th>
+					<td>
+						<input class="input" type="text" maxlength="250" name="project[logo]"  value="<%= session[:logo] %>">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" >
+						<button type="submit" class="button">Update Project</button>
+						<a href="<%= projectsCancel_path %>" ><button class="button" >Cancel</button></a>
+					</td>
+
+				</tr>
+
+			</table>
+		</form>
+		</div>
+		<div  class="col-md-2"></div>
+	</div>
+
+</div>
+
+<% end %>
+
+
+
+<div class="container">
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div  class="col-md-10">
+			<h2>All Rodolfo's projects:</h2>
+		</div>
+	</div>
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div class="col-md-8">
+		<table class="table table-bordered">
+			<thead>
+			<tr>
+				<th>Logo</th>
+				<th>Name</th>
+				<th>Technology</th>
+				<th>Description</th>
+				<th>Links</th>
+				<th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			<% @projects.each do |project| %>
+				<tr>
+					<td><% if project.logo %>
+						<img class="educationLogo" src="<%= image_url(project.logo.to_s) %>" alt="">
+						<%end%></td>
+					<td><a href="#"><%= project.name %></a></td>
+					<td><%= project.technology %></td>
+					<td><%= project.description %></td>
+					<td><%= project.link %></td>
+					<td>
+						<a href="<%= projectsEdit_path project.id %>">Edit</a>
+						<a href="<%= projectsDestroy_path project.id %>" data-method="delete">Delete</a>
+					</td>
+				</tr>
+			<% end %>
+			<tr ><td  align="center" colspan="6" ><%= will_paginate @projects %></td></tr>
+			</tbody>
+		</table>
+		</div>
+	<div  class="col-md-2"></div>
+	</div>
+</div>
+	
+

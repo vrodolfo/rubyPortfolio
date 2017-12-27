@@ -1,0 +1,60 @@
+
+
+<section class="parallax education" id="education">
+		<br><br><br>
+		<div class="row row2">
+			<div class="col-md-offset-1 col-md-11">
+				<h1 class="title">Education</h1>
+			</div>
+			<br>
+		</div>
+		<br>
+		<div class="row row2">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+
+				<table class="table table-bordered">
+					<tr class="subtitle">
+						<th>Logo</th>
+						<th>Name</th>
+						<th>Category</th>
+						<th>School</th>
+						<th>Status</th>
+						<th>Location</th>
+						<th>Website</th>
+					</tr>
+						<% @educations.each do |education| %>
+							<tr class="skill">	
+								<td><% if education.logo %>
+									<img class="educationLogo" src="<%= image_url(education.logo.to_s) %>" alt="">
+									<%end%></td>
+								<td><a href="#"  class="link" data-toggle="modal" data-target="#myModal<%= education.id %>" ><%= education.name %></a></td>
+								<td><%= education.category %></td>
+								<td><%= education.school %></td>
+								<td><%= education.status %></td>
+								<td><%= education.city %>, <%= education.country %></td>
+								<td><a href="<%= education.website %>" class="link" target="_blank"> Go </a></td>
+								
+							</tr>
+						<% end %>
+						<tr><td colspan="7">
+							<input type="hidden" name="" id="">
+							<% if @eduPages > 0 %>
+								<p class="paging">Page:
+								<% @eduPages.times do |i| %>
+									<% if (i+1).to_i==@pageEdu.to_i %>
+										<%= i+1 %>
+									<% else %>
+										<a href="<%= root_path(@pageProjects,@pageSkills,i+1) %>"><%= i+1 %></a>
+									<% end %>  
+								<% end %>
+								</p>
+							<% end %>
+						</td></tr>
+				</table>	
+			</div>
+				
+			<div class="col-md-1"></div>
+		</div>
+		
+	</section>

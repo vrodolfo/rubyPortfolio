@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rodolfo Valdivieso</title>
+  <link rel="icon" href="<%= image_url('minilogo.png') %>" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'stylesAdmin'  %>
+  <%= stylesheet_link_tag    'style'  %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+<% if session.key? 'user_id' %>
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+    <div class="container">
+      <div class="row row2">
+        <div class="col-md-12">
+          <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<%= root_path(1, 1, 1) %>">
+          <div class="logoHeader">  
+            Rodolfo Valdivieso <br>
+            <p class="logoinner">Web Developer</p>
+          </div>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right custom-header">
+          <li><a href="<%= main_path session[:user_id] %>"  class="page-scroll">Dashboard</a></li>
+          <li><a href="<%= skillsIndex_path %>"  class="page-scroll">Skills</a></li>
+          <li><a href="<%= coursesIndex_path %>"  class="page-scroll">Education</a></li>
+          <li><a href="<%= projectsIndex_path %>"  class="page-scroll">Projects</a></li>
+          <li><a href="<%= usersShow_path session[:user_id] %>"  class="page-scroll">User</a></li>
+          <li><a href="<%= sessionsDestroy_path %>" data-method="delete" class="page-scroll">Log Out</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <br><br><br><br><br>
+<%else%>
+  <a href="<%= root_path(1, 1, 1) %>"> <h1>Return Home</h1> </a>
+<% end %>
+
+
+<% if flash[:failed] %>
+
+  <table>
+    <% flash[:failed].each do |value| %>
+      <tr ><td class="alert alert-failed">
+        <span ><%= value %></span>
+      </td></tr>
+      <% end %>
+  </table>
+<% end %>
+
+<% if flash[:success] %>
+    <% flash[:success].each do |value| %>
+        <span class="alert alert-failed"><%= value %></span>
+      <% end %>
+<% end %>
+
+
+
+<%= yield %>
+
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+</body>
+</html>

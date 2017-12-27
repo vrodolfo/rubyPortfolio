@@ -1,0 +1,145 @@
+
+
+<% if @update == 0 %>
+	
+<div class="container">
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div  class="col-md-10">
+			<h2>Add a Skill</h2>
+		</div>
+	</div>
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div class="col-md-8">
+		<form action="<%= skillsCreate_path %>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<table class="table table-bordered">
+				<tr>
+					<th>Name:</th>
+					<td><input class="input" type="text" maxlength="100" name="skill[name]" value="<%= session[:name] %>"></td>
+				</tr>
+				<tr>
+					<th>Category:</th>
+					<td><input class="input" type="text" maxlength="100" name="skill[category]"  value="<%= session[:category] %>"></td>
+				</tr>
+				<tr>
+					<th>Years:</th>
+					<td><input class="input" type="number" maxlength="100" name="skill[years]"  value="<%= session[:years] %>"></td>
+				</tr>
+				<tr>
+					<th>Comment:</th>
+					<td>
+						<textarea class="input" name="skill[comment]" id="" cols="30" rows="5"><%= session[:comment] %></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<button type="submit" class="button" value="Add Skill">Add Skill</button>
+						<a href="<%= skillsCancel_path %>" ><button class="button" >Cancel</button></a>
+					</td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div  class="col-md-2"></div>
+	</div>
+</div>
+<% else %>
+
+	
+<div class="container">
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div  class="col-md-10">
+			<h2>Edit a Skill</h2>
+		</div>
+	</div>
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div class="col-md-8">
+		<form action="<%= skillsUpdate_path session[:skill_id] %>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="_method" value="patch">
+			
+			<table class="table table-bordered">
+				<tr>
+					<td>Name:</td>
+					<td><input class="input" type="text" maxlength="100" name="skill[name]" value="<%= session[:name] %>"></td>
+				</tr>
+				<tr>
+					<td>Category:</td>
+					<td><input class="input" type="text" maxlength="100" name="skill[category]"  value="<%= session[:category] %>"></td>
+				</tr>
+				<tr>
+					<td>Years:</td>
+					<td><input class="input" type="number" maxlength="100" name="skill[years]"  value="<%= session[:years] %>"></td>
+				</tr>
+				<tr>
+					<td>Comment:</td>
+					<td>
+						<textarea class="input" name="skill[comment]" id="" cols="30" rows="5"><%= session[:comment] %></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td  align="center" colspan="2">
+						<button type="submit" class="button">Update Skill</button>
+						<a href="<%= skillsCancel_path %>" ><button class="button" >Cancel</button></a>
+					</td>
+
+				</tr>
+
+			</table>
+		</form>
+		</div>
+		<div  class="col-md-2"></div>
+	</div>
+
+</div>
+
+<% end %>
+
+
+
+<div class="container">
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div  class="col-md-10">
+			<h2>All Rodolfo's Skills:</h2>
+		</div>
+	</div>
+	<div class="row row2">
+		<div  class="col-md-2"></div>
+		<div class="col-md-8">
+		<table class="table table-bordered">
+			<thead>
+			<tr>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Years</th>
+				<th>Comments</th>
+				<th>Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			<% @skills.each do |skill| %>
+				<tr>	
+					<td><a href="#"><%= skill.name %></a></td>
+					<td><%= skill.category %></td>
+					<td><%= skill.years %></td>
+					<td><%= skill.comment %></td>
+					<td>
+						<a href="<%= skillsEdit_path skill.id %>">Edit</a>
+						<a href="<%= skillsDestroy_path skill.id %>" data-method="delete">Delete</a>
+					</td>
+				</tr>
+
+			<% end %>
+			<tr ><td  align="center" colspan="5" ><%= will_paginate @skills %></td></tr>
+			</tbody>
+		</table>
+		</div>
+	<div  class="col-md-2"></div>
+	</div>
+</div>
+
