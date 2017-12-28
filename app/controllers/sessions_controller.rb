@@ -54,7 +54,7 @@ class SessionsController < ApplicationController
     # @test = ContactMail.contactEmail(@user).deliver
     # p @test
     begin
-      cc = 'rodolfo.valdivieso@gmail.com'
+      cc = ENV['ccemail']
       ContactMail.contactEmail(@user, params, cc).deliver
       session[:email] = 1
     rescue

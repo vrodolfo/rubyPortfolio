@@ -2,20 +2,5 @@
 <div class="container">
 	<h1>Welcome, <%= @current_user.first_name %>!!! </h1>
 	<h3>Please select an option from the Top menu.</h3>
-	<div id="map"></div>
+	<div id=""></div>
 </div>
-
-
-
-<script type="text/javascript">
-		function myMap() {
-		    var mapOptions = {
-		        center: new google.maps.LatLng(33.036612, -96.704803),
-		        zoom: 9,
-		        mapTypeId: google.maps.MapTypeId.HYBRID
-		    }
-		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-		}
-	</script>
-
-	<script  async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['maps_apikey'] %>&callback=myMap"></script>

@@ -6,7 +6,19 @@
   <%= stylesheet_link_tag    'style' %>
   
   <%= csrf_meta_tags %>
-  
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<script type="text/javascript" data-turbolinks-eval=false>
+		function myMap() {
+		    var mapOptions = {
+		        center: new google.maps.LatLng(33.036612, -96.704803),
+		        zoom: 9,
+		        mapTypeId: google.maps.MapTypeId.HYBRID
+		    }
+		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		}
+	</script>
+
+	<script  async defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['maps_apikey'] %>&callback=myMap" data-turbolinks-eval=false></script>
   <link rel="icon" href="<%= image_url('minilogo.png') %>" />
 </head>
 <body>
@@ -70,9 +82,6 @@
 
 
 <%= yield %>
-
-
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

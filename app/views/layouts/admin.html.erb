@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'stylesAdmin'  %>
   <%= stylesheet_link_tag    'style'  %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
 
@@ -73,7 +74,6 @@
 <%= yield %>
 
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>
